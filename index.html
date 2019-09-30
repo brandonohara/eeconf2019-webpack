@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/dist/app.css" />
+    </head>
+    <body class="bg-dark">
+        <div class="container" id="app">
+            <nav class="navigation navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">
+                    <span>Wuphf<strike>.com</strike>.io</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                <span class="fas fa-fw fa-dog"></span> All Woofs
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="fas fa-fw fa-fire"></span> Trending
+                            </a>
+                        </li>
+                        <li class="nav-item icon-shake">
+                            <a class="nav-link" href="#">
+                                <span class="fas fa-fw fa-bone"></span> Favorites
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="fas fa-fw fa-cog"></span> Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="woof.play()" class="btn btn-primary nav-link" href="#">
+                                <span class="fas fa-fw fa-paw"></span> WUPHF
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content flex">
+                <post-form></post-form>
+                <posts-container :featured="1"></posts-container>
+            </div>
+        </div>
+        
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>

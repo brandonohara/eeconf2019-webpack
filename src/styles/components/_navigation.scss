@@ -1,0 +1,65 @@
+nav.navigation {
+    display: flex;
+    width: 100%;
+    background-color: $primary;
+    ul.navbar-nav {
+        li.nav-item a.nav-link {
+            display: block;
+            font-size: 16px;
+            font-weight: $font-weight-bold;
+            color: $white;
+            letter-spacing: 1px;
+            border-right: 5px solid transparent;
+
+            span {
+                margin-right: 5px;
+            }
+        }
+        li.nav-item a.nav-link:hover, li.active a.nav-link {
+            background-color: darken($dark, 5);
+        }
+        li.active a.nav-link {
+            border-color: $primary;
+        }
+    }
+}
+
+@media (min-width: 991px) {
+    nav.navigation {
+        position: fixed;
+        display: block;
+        flex-direction: column;
+        width: $navigation-width;
+        height: calc(100vh - 30px);
+        margin: 15px 0px;
+
+        .navbar-brand {
+            display: block;
+            width: 100%;
+            height: $navigation-logo;
+            margin: 0px 0px 10px;
+            background: url(./../images/expression-engine-logo.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            span {
+                display: none;
+            }
+        }
+
+        .navbar-collapse {
+            height: calc(100% - #{$navigation-logo});
+            align-items: flex-start;
+        }
+
+        .navbar-nav {
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+
+            li:nth-of-type(4) {
+                flex: 1;
+            }
+        }
+    }
+}

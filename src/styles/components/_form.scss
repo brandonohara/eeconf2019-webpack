@@ -1,0 +1,27 @@
+.post-form {
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: darken($dark, 5);
+
+    .post-title {
+        margin: 0px 0px 10px;
+        font-size: 16px;
+        color: darken($white, 30);
+        text-align: center;
+    }
+    .post-message {
+        padding: 15px 0px;
+        font-size: 16px;
+        color: $white;
+        text-align: center;
+    }
+
+    textarea, input {
+        width: 100%;
+        padding: 10px;
+        color: $white !important;
+        border: 1px solid lighten($dark, 2);
+        background-color: $dark !important;
+    }
+}

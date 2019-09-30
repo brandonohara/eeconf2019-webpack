@@ -1,0 +1,66 @@
+.posts-container {
+    width: 100%;
+}
+
+.post {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 30px 30px 0px;
+    color: $white;
+    background-color: darken($dark, 5);
+
+    .metadata {
+        display: flex;
+        align-items: center;
+
+        font-size: 16px;
+        line-height: 20px;
+
+        .verified {
+            position: relative;
+            top: -3px;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            font-size: 8px;
+            line-height: 16px;
+            text-align: center;
+            background-color: $primary;
+            border-radius: 50%;
+        }
+
+        img {
+            float: left;
+            width: 40px;
+            margin-right: 5px;
+            border-radius: 50%;
+            border: 1px solid $white;
+        }
+    }
+
+    .media {
+        img {
+            width: 100%;
+        }
+    }
+    .actions {
+        display: flex;
+        padding: 15px 0px;
+        justify-content: center;
+
+        a {
+            display: block;
+            margin: 0px 30px;
+            padding: 8px;
+        }
+    }
+}
+.post:last-child {
+    margin: 0px;
+}
+.post-message {
+    padding: 60px 0px;
+    color: $white;
+    text-align: center;
+}

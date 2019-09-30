@@ -1,0 +1,27 @@
+#app {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        flex: 1;
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 991px) {
+    #app {
+        display: flex;
+
+        .content {
+            margin-left: $navigation-width;
+            padding: 30px;
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    #app {
+        max-width: 800px;
+    }
+}
