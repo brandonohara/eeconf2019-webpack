@@ -21,6 +21,16 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/,
                 use : [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(ttf|otf|svg|eot|woff2?)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: './fonts/'
+                    }
+                }
             }
         ]
     },
