@@ -31,6 +31,16 @@ module.exports = {
                         outputPath: './fonts/'
                     }
                 }
+            },
+            {
+                test: /\.(png|gif|jpe?g)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: './images/'
+                    }
+                }
             }
         ]
     },
