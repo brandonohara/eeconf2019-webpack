@@ -4,7 +4,8 @@ var path = require('path');
 module.exports = {
     entry: {
         app: [
-            './src/js/index.js'
+            './src/js/index.js',
+            './src/styles/main.scss'
         ]
     },
 
@@ -14,10 +15,13 @@ module.exports = {
     },
 
     module: {
-        rules: []
+        rules: [
+            {
+                test: /\.s[ac]ss$/,
+                use : ['style-loader', 'css-loader', 'sass-loader']
+            }
+        ]
     },
-    plugins: [
-    
-    ]
+    plugins: []
 };
 
