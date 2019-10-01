@@ -1,7 +1,9 @@
 var webpack = require('webpack');
 var path = require('path');
+var glob = require('glob-all');
 
 let MiniCssExtractPlugin = require('mini-css-extract-plugin');
+let PurgecssPlugin = require('purgecss-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -47,6 +49,12 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].css'
+        }),
+        new PurgecssPlugin({
+            paths: glob.sync([
+                path.join(__dirname, './index.html'),
+                path.join(__dirname, './src/js/**/*.vue')
+            ])
         })
     ]
 };
