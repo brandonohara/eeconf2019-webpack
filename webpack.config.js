@@ -9,7 +9,8 @@ module.exports = {
     entry: {
         app: [
             './src/js/index.js',
-            './src/styles/main.scss'
+            './src/styles/main.scss',
+            './src/audio/woof.mp3'
         ]
     },
 
@@ -41,6 +42,16 @@ module.exports = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: './images/'
+                    }
+                }
+            },
+            {
+                test: /\.(mp3)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: './audio/'
                     }
                 }
             }
