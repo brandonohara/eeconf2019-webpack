@@ -54,13 +54,24 @@ module.exports = {
             },
             {
                 test: /\.(png|gif|jpe?g)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: './images/'
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: './images/'
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            pngquant: {
+                                quality: [0.65, 0.90],
+                                speed: 4
+                            }
+                        }
                     }
-                }
+                ]
             },
             {
                 test: /\.(mp3)$/,
