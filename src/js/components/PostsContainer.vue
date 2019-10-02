@@ -33,7 +33,7 @@
         methods: {
             getWuphfs() {
                 this.loading = true;
-                let domain = 'http://wuphf.test/';
+                let domain = 'https://wuphf.brandonohara.com/';
                 axios.get(domain + 'api/v1/wuphfs', {
                     params: {
                         'featured': this.featured,

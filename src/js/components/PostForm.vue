@@ -47,7 +47,7 @@
             submit() {
                 this.errors = {};
                 this.loading = true;
-                let domain = 'http://wuphf.test/';
+                let domain = 'https://wuphf.brandonohara.com/';
                 axios.post(domain + 'api/v1/wuphfs', this.form)
                 .then(response => {
                     console.log(response);
