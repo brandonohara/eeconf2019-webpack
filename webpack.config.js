@@ -4,6 +4,7 @@ var glob = require('glob-all');
 
 let MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let PurgecssPlugin = require('purgecss-webpack-plugin');
+let VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     entry: {
@@ -19,12 +20,22 @@ module.exports = {
         filename: 'bundle.js'
     },
 
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+        }
+    },
+
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
+            },
+            {
+                test: /\.vue$/,
+                use: 'vue-loader'
             },
             {
                 test: /\.s[ac]ss$/,
@@ -71,7 +82,8 @@ module.exports = {
                 path.join(__dirname, './index.html'),
                 path.join(__dirname, './src/js/**/*.vue')
             ])
-        })
+        }),
+        new VueLoaderPlugin()
     ]
 };
 

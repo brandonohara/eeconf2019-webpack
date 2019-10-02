@@ -30,11 +30,11 @@ window.woof = require('./helpers/woof').default;
 /**
  * Load VueJS and our custom components
  */
-// import Vue from 'vue'
-// window.Vue = Vue;
-// Vue.component('post', require('./components/Post.vue').default);
-// Vue.component('post-form', require('./components/PostForm.vue').default);
-// Vue.component('posts-container', require('./components/PostsContainer.vue').default);
-// const app = new Vue({
-//     el: '#app'
-// });
+import Vue from 'vue'
+window.Vue = Vue;
+Vue.component('post', require('./components/Post.vue').default);
+Vue.component('post-form', require('./components/PostForm.vue').default);
+Vue.component('posts-container', require('./components/PostsContainer.vue').default);
+const app = new Vue({
+    el: '#app'
+});
