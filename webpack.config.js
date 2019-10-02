@@ -5,6 +5,7 @@ var glob = require('glob-all');
 let MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let PurgecssPlugin = require('purgecss-webpack-plugin');
 let VueLoaderPlugin = require('vue-loader/lib/plugin');
+let BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -83,7 +84,14 @@ module.exports = {
                 path.join(__dirname, './src/js/**/*.vue')
             ])
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3000,
+            server: {
+                baseDir: ['./']
+            }
+        })
     ]
 };
 
